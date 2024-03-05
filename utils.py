@@ -121,27 +121,27 @@ def BDD_insertFile(db,sqlfile):
         lignes = fd.readlines()
         fd.close()
     except Exception as e:
-        print ("Impossible de reouvrir le fichier d'insertion\n")
-        print (e.message)
+        print("Impossible de reouvrir le fichier d'insertion\n")
+        print(e.message)
         return 0
 
     try:
         #cur.execute("START TRANSACTION")
         for ligne in lignes:
             cur.execute(ligne)
-            nbinsert=nbinsert+1
+            nbinsert = nbinsert+1
         db.commit()
     except MySQLdb.Error as e:
         #cur.execute("ROLLBACK")
         db.rollback()
-        print ("Probleme dans l'execution de la requete d'insertion")
-        print ("requete=",ligne)
+        print("Probleme dans l'execution de la requete d'insertion")
+        print("requete=", ligne)
         #print sys.exc_info()
         print (e.args[0],e.args[1])
         exc_type, exc_obj, exc_tb = sys.exc_info()
         fname = os.path.split(exc_tb.tb_frame.f_code.co_filename)[1]
         message = traceback.format_exc()
-        print ("MESSAGE=",message)
+        print("MESSAGE=", message)
         #return 0
     cur.close()
     return nbinsert
@@ -163,15 +163,15 @@ def envoiMail(destinataire,message,subject):
     s.quit()
 
 def ecriture_fichierLog(fichierLog, message):
-    if fichierLog != None:
+    if fichierLog is not None:
         #ecriture des logs
         try:
             fd = open(fichierLog, "a")
             fd.write("\n"+message)
         except:
-            print ("Impossible de creer le fichier d'insertion " + fichierLog + "\n")
+            print("Impossible de creer le fichier d'insertion " + fichierLog + "\n")
         finally:
             fd.close()
     else:
-        print (message)
+        print(message)
 
