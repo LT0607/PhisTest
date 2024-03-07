@@ -26,38 +26,43 @@ parser = argparse.ArgumentParser(description='insertion meteo phenopsis')
 
 #configFile = args.configfile
 
-hostBD = 'mariadbc.localsi'
-bd = 'phenopsis'
-login = 'fabre'
-pwd = 'juliette'
+hostBD = 'localhost'
+bd = 'db'
+login = 'PhenopsisUser'
+pwd = 'password'
 
 donneesAInserer = 0
-
+nbInsertions = 0
 #espaceTravail = "/home/phenopsis/METEO";
 #os.chdir(espaceTravail);
+fichierLog = "insertionMeteoLOG1.txt"
+lastloc = 2
+envoiBD = 1
+site = "C1"
+dataIn = "meteo.phenopsis1.dat"
 
+message = time.strftime('%d/%m/%Y %H:%M', time.localtime()) + " - site " + site + "\n"
+
+donneesAInserer = 0
 ### Parcours fichier XML ###
 tree = ET.parse('config.xml')
 alertes = tree.getroot()
 
-for alerte in alertes:
+"""for alerte in alertes:
     fichierLog = alerte.find('log').text  # logs des insertions
     lastloc = int(alerte.find('lastloc').text)  # lastLoc
     envoiBD = int(alerte.find('bd').text)  # envoi en BD (1: envoi; 0: pas d'envoi)
     site = alerte.find('site').text  # site
     dataIn = alerte.find("meteo").text  # fichier meteo
-    email = alerte.find("mail").text  # email(s)
-message = time.strftime('%d/%m/%Y %H:%M', time.localtime()) + " - site " + site + "\n"
-
-donneesAInserer = 0
+    email = alerte.find("mail").text  # email(s)"""
 
 if envoiBD == 1:
     print("site=", site, "-envoi BD actif", "-lastLoc=", lastloc)
-    # ---------------------------
-    # RECUPERATION DONNEES METEOS
-    # ---------------------------
-    # Lecture du fichier dataIn
-    # -------------------------
+        # ---------------------------
+        # RECUPERATION DONNEES METEOS
+        # ---------------------------
+        # Lecture du fichier dataIn
+        # -------------------------
     try:
         meteo = open(dataIn, "r")
     except:
@@ -69,17 +74,19 @@ if envoiBD == 1:
 
     meteo.seek(0)  # on repart au debut
 
-    # requ  tes SQL d'insertion
+        # requ  tes SQL d'insertion
     dataToWrite = ""
-    # fichier SQL conteant les requ  tes
-    mysqlFile = "/tmp/meteo.phenopsis" + site + ".sql"
+    fd = ""
+    db = ""
+        # fichier SQL conteant les requ  tes
+    mysqlFile = 'phenopsisC1.sql'
     if lastloc > nbRow:
         message += "aucune donnees a inserer\n"
     else:
         # lecture du fichier
         # pour eviter erreur _csv.Error: line contains NULL byte
         lecteur = csv.reader((line.replace('\0', '') for line in meteo))
-        # lecteur = csv.reader(meteo)
+        #lecteur = csv.reader(meteo)
 
         # saut ligne tant qu'on n'a pas atteint le lastloc
         numLigne = 1
@@ -88,16 +95,16 @@ if envoiBD == 1:
         lignesVues = []
         nbDoublons = 0
         while numLigne < lastloc:
-            lecteur.next()
+            next(lecteur)
             numLigne = numLigne + 1
 
         ligneAInserer = 0
         ligneASauter = 0
-        # print dataIn
+            # print dataIn
         for ligne in lecteur:
             ligneASauter += 1
-            # print ligne
-            # dateHeure=ligne[1]+"-"+ligne[2]+"-"+ligne[3]
+                # print ligne
+                # dateHeure=ligne[1]+"-"+ligne[2]+"-"+ligne[3]
             if ligne == []:  # si ligne vide on passe a la suivante
                 continue
             dateHeure = ligne[1] + "-" + ligne[2] + "-" + ligne[3]
@@ -114,27 +121,27 @@ if envoiBD == 1:
             jourJulien = int(ligne[2])
             heure = int(ligne[3])
 
-            # conversion jourJulien en calendar date (yyyy, mm, dd)
+                # conversion jourJulien en calendar date (yyyy, mm, dd)
             date = doy_to_time_array(jourJulien, yyyy=annee)
 
-            # conversion heure au format hh:mm
+                # conversion heure au format hh:mm
             heure = formatHeure(heure)
 
-            # attention MySQL pas d'enregistrement si le datetime est AAAA-MM-YY 24:00:00
+                # attention MySQL pas d'enregistrement si le datetime est AAAA-MM-YY 24:00:00
             if heure == 2400:
                 jourJulien = jourJulien + 1
                 heure = 00
 
-            # mise en forme date format BD
+                # mise en forme date format BD
             dateBD = str(date[0]) + "-" + str(date[1]) + "-" + str(date[2]) + " " + str(heure)
 
-            # stockage des donn  es sous forme de dictionnaire
+                # stockage des donn  es sous forme de dictionnaire
             if site == "C1":
                 temperature = float(ligne[4])
                 humidite = float(ligne[5])
                 rayonnement = float(ligne[6])
                 vpd = float(ligne[7])
-                # tp_plafond  = float(ligne[8])
+                    # tp_plafond  = float(ligne[8])
             elif site == "C2" or site == "C3":
                 temperature = float(ligne[4])
                 humidite = float(ligne[5])
@@ -178,7 +185,7 @@ if envoiBD == 1:
                 vpd = round(calculVPD(temperature, humidite), 3)
 
             data = {}
-
+            
             if temperature != -6999:
                 data['temperature'] = temperature
             if humidite != -6999:
@@ -193,84 +200,84 @@ if envoiBD == 1:
             # parcours des donn  es pour generation requete SQL
             for var in data:
                 donneesAInserer += 1
-                sql = "INSERT INTO MesureMeteo (idChambre,date,idVariable,valeur) VALUES ('" + \
-                      site + "','" + dateBD + "','" + var + "'," + str(data[var]) + ");\n"
+                sql = "INSERT INTO MesureMeteoTest (idChambre,date,idVariable,valeur) VALUES ('" +site + "','" + dateBD + "','" + var + "'," + str(data[var]) + ");\n"
                 dataToWrite += sql
 
-            # enregistrement lignes SQL dans fichier
-            try:
-                fd = open(mysqlFile, 'w')
-                fd.write(dataToWrite)
-            except:
-                print("Impossible de creer le fichier d'insertion " + mysqlFile + "\n")
-            finally:
-                fd.close()
-                # exit
+        # enregistrement lignes SQL dans fichier
+        try:
+            fd = open(mysqlFile, 'w')
+            fd.write(dataToWrite)
+        except:
+            print("Impossible de creer le fichier d'insertion " + mysqlFile + "\n")
+        finally:
+            fd.close()
+            # exit
 
-                # connection    la base
+        # connection    la base
+        try:
+            db = BDD_connect(host=hostBD, bd=bd, login=login, pwd=pwd)
+        except:
+            print("Impossible de se connecter a la bd\n")
+            exc_type, exc_obj, exc_tb = sys.exc_info()
+            fname = os.path.split(exc_tb.tb_frame.f_code.co_filename)[1]
+            message = traceback.format_exc()
+            print(message)
+
+        # insertion du fichier SQL
+        try:
+            nbInsertions = BDD_insertFile(db, mysqlFile)
+            # nbInsertions=donneesAInserer #pour test sans insertion en BD
+        except:
+            print("probleme insertion SQL\n")
+            exc_type, exc_obj, exc_tb = sys.exc_info()
+            fname = os.path.split(exc_tb.tb_frame.f_code.co_filename)[1]
+            message = traceback.format_exc()
+            print(message)
+
+        message += "nombre de lignes a inserer:" + str(ligneAInserer) + "\n"
+        message += "nombre d'enregistrements a inserer:" + str(donneesAInserer) + "\n"
+        message += "nombre d'enregistrements insere:" + str(nbInsertions) + "\n"
+        message += "nombre de lignes en double:" + str(nbDoublons) + "\n"
+
+        if nbInsertions != donneesAInserer:
+            message += "pas de MAJ du lastloc" + "\n"
+        """else:
+            # MAJ du lastloc
+            lastlocNew = lastloc + ligneASauter
+            print("nouveau lastLoc:" + str(lastlocNew) + "\n")
+            message += "nouveau lastLoc:" + str(lastlocNew) + "\n"
             try:
-                db = BDD_connect(host=hostBD, bd=bd, login=login, pwd=pwd)
+                alerte.find('lastloc').text = str(lastlocNew)
+                print("lastloc MAJ\n")
             except:
-                print("Impossible de se connecter a la bd\n")
+                print("impossible de mettre    jour le lastloc\n")
                 exc_type, exc_obj, exc_tb = sys.exc_info()
                 fname = os.path.split(exc_tb.tb_frame.f_code.co_filename)[1]
                 message = traceback.format_exc()
-                print(message)
+                print(message)"""
+    meteo.close()
+else:
+    message += "pas d'envoi en BD active\n"
 
-                # insertion du fichier SQL
-            try:
-                nbInsertions = BDD_insertFile(db, mysqlFile)
-                # nbInsertions=donneesAInserer #pour test sans insertion en BD
-            except:
-                print("probleme insertion SQL\n")
-                exc_type, exc_obj, exc_tb = sys.exc_info()
-                fname = os.path.split(exc_tb.tb_frame.f_code.co_filename)[1]
-                message = traceback.format_exc()
-                print(message)
-                message += "nombre de lignes a inserer:" + str(ligneAInserer) + "\n"
-                message += "nombre d'enregistrements a inserer:" + str(donneesAInserer) + "\n"
-                message += "nombre d'enregistrements insere:" + str(nbInsertions) + "\n"
-                message += "nombre de lignes en double:" + str(nbDoublons) + "\n"
+# envoi logs
+# if email != None:
+#    for destinataire in email.split(';'):
+#        #print "mail-",destinataire
+#        subject = "insertion meteo " + site
+#        envoiMail(destinataire,message,subject)
+# ecriture Log
+ecriture_fichierLog("writeLogTest", message)
+# if fichierLog != None:
+#    #ecriture des logs
+#    try:
+#       fd = open(fichierLog, "a")
+#       fd.write("\n"+message)
+#    except:
+#        print "Impossible de creer le fichier d'insertion " + fichierLog + "\n"
+#    finally:
+#        fd.close()
+#else:
+#    print message
 
-                if nbInsertions != donneesAInserer:
-                    message += "pas de MAJ du lastloc" + "\n"
-                else:
-                    # MAJ du lastloc
-                    lastlocNew = lastloc + ligneASauter
-                    print("nouveau lastLoc:" + str(lastlocNew) + "\n")
-                    message += "nouveau lastLoc:" + str(lastlocNew) + "\n"
-                    try:
-                        alerte.find('lastloc').text = str(lastlocNew)
-                        print("lastloc MAJ\n")
-                    except:
-                        print("impossible de mettre    jour le lastloc\n")
-                        exc_type, exc_obj, exc_tb = sys.exc_info()
-                        fname = os.path.split(exc_tb.tb_frame.f_code.co_filename)[1]
-                        message = traceback.format_exc()
-                        print(message)
-            meteo.close()
-        else:
-            message += "pas d'envoi en BD active\n"
-
-        # envoi logs
-        # if email != None:
-        #    for destinataire in email.split(';'):
-        #        #print "mail-",destinataire
-        #        subject = "insertion meteo " + site
-        #        envoiMail(destinataire,message,subject)
-        # ecriture Log
-        ecriture_fichierLog(fichierLog, message)
-        # if fichierLog != None:
-        #    #ecriture des logs
-        #    try:
-        #       fd = open(fichierLog, "a")
-        #       fd.write("\n"+message)
-        #    except:
-        #        print "Impossible de creer le fichier d'insertion " + fichierLog + "\n"
-        #    finally:
-        #        fd.close()
-        # else:
-        #    print message
-
-        # MAJ fichier XML
-        #tree.write(configFile)
+#MAJ fichier XML
+#tree.write(configFile)

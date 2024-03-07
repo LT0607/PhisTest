@@ -1,0 +1,30 @@
+
+Traceback (most recent call last):
+  File "/home/alianely/IdeaProjects/PhisTest/InsertionMeteoPhenopsis.py", line 227, in <module>
+    nbInsertions = BDD_insertFile(bd, mysqlFile)
+  File "/home/alianely/IdeaProjects/PhisTest/utils.py", line 119, in BDD_insertFile
+    cur = db.cursor()
+AttributeError: 'str' object has no attribute 'cursor'
+nombre de lignes a inserer:134
+nombre d'enregistrements a inserer:536
+nombre d'enregistrements insere:0
+nombre de lignes en double:0
+pas de MAJ du lastloc
+
+Traceback (most recent call last):
+  File "/home/alianely/IdeaProjects/PhisTest/InsertionMeteoPhenopsis.py", line 227, in <module>
+    nbInsertions = BDD_insertFile(bd, mysqlFile)
+  File "/home/alianely/IdeaProjects/PhisTest/utils.py", line 119, in BDD_insertFile
+    cur = db.cursor()
+AttributeError: 'str' object has no attribute 'cursor'
+nombre de lignes a inserer:134
+nombre d'enregistrements a inserer:536
+nombre d'enregistrements insere:0
+nombre de lignes en double:0
+pas de MAJ du lastloc
+
+07/03/2024 14:55 - site C1
+nombre de lignes a inserer:134
+nombre d'enregistrements a inserer:536
+nombre d'enregistrements insere:536
+nombre de lignes en double:0

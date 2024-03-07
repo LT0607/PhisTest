@@ -206,7 +206,7 @@ def doy_to_time_array(doy, yyyy=2005):
     if (doy>366):
         xdoy=doy
         doy=yyyy
-    yyyy=xdoy
+        yyyy=xdoy
 
 
     utc=doy_to_utc(doy, 0, yyyy)
