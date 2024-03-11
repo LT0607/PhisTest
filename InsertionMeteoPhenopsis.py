@@ -15,7 +15,6 @@ On garde la premiere valeur correspondant a une date donn  e et on saute la seco
 ### LIBRARY ###
 import os, csv, time, sys, argparse, traceback
 from time_module import doy_to_time_array
-from utils import *
 # from lxml import etree
 import xml.etree.ElementTree as ET
 
@@ -33,8 +32,7 @@ pwd = 'password'
 
 donneesAInserer = 0
 nbInsertions = 0
-#espaceTravail = "/home/phenopsis/METEO";
-#os.chdir(espaceTravail);
+meteo = ''
 #fichierLog = "insertionMeteoLOG1.txt"
 #lastloc = 2
 #envoiBD = 1
