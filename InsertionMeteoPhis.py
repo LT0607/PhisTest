@@ -44,6 +44,7 @@ def meteo_parser (config_file):
     global data, dateBD
     list_data = []
     list_date = []
+    complete_data = []
     tree = ET.parse(config_file)
     alertes = tree.getroot()
 
@@ -165,8 +166,16 @@ def meteo_parser (config_file):
                         data['vpd'] = vpd
                     if site == "C2" or site == "C3":
                         data['co2'] = co2
+                    data['date'] = dateBD
+                    data['site'] = site
                     list_data.append(data)
-                    list_date.append(dateBD)
-    return list_data, list_date
+
+                    #list_date.append(dateBD)
+                    #complete_data.append(data)
+                    #complete_data.append(dateBD)
+                    #complete_data.append(site)
+
+    return list_data
+
 
 

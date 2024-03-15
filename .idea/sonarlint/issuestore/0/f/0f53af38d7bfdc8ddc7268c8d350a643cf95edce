@@ -1,0 +1,11 @@
+
+6python:S125"Remove this commented out code.(×µ³Ñ
+;python:S125 "Remove this commented out code.(åþ‡Ðùÿÿÿÿ
+Hpython:S1481Õ"0Replace the unused local variable "hh" with "_".(¯üþ
+Hpython:S1481Õ"0Replace the unused local variable "mi" with "_".(¯üþ
+Ipython:S1481Õ"1Replace the unused local variable "sec" with "_".(¯üþ
+epython:S6729æ"MUse "np.nonzero" when only the condition parameter is provided to "np.where".(äú÷
+epython:S6729í"MUse "np.nonzero" when only the condition parameter is provided to "np.where".(äú÷
+kpython:S6729ô"MUse "np.nonzero" when only the condition parameter is provided to "np.where".(ãÏ¨¦ùÿÿÿÿ
+kpython:S6729û"MUse "np.nonzero" when only the condition parameter is provided to "np.where".(ãÏ¨¦ùÿÿÿÿ
+epython:S6729þ"MUse "np.nonzero" when only the condition parameter is provided to "np.where".(äú÷

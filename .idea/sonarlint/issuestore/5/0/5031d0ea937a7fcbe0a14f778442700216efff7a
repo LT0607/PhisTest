@@ -1,0 +1,18 @@
+
+6python:S125"Remove this commented out code.(‡€Áä
+vpython:S117+"ZRename this local variable "listHeure" to match the regular expression ^[_a-z][a-z0-9_]*$.(½Þõœþÿÿÿÿ
+npython:S1542"QRename function "formatHeure" to match the regular expression ^[a-z_][a-z0-9_]*$.(¢ð™ìúÿÿÿÿ
+6python:S125-"Remove this commented out code.(„†é“
+gpython:S1542<"ORename function "calculVPD" to match the regular expression ^[a-z_][a-z0-9_]*$.(­·¶º
+npython:S1542Z"QRename function "BDD_connect" to match the regular expression ^[a-z_][a-z0-9_]*$.(Ž‡‚×üÿÿÿÿ
+Tpython:S5754p"<Specify an exception class to catch or reraise the exception(ˆÊÉ·
+qpython:S1542u"TRename function "BDD_insertFile" to match the regular expression ^[a-z_][a-z0-9_]*$.(Û¢”ùÿÿÿÿ
+Bpython:S1481")Remove the unused local variable "fname".(ìà•²
+Opython:S1481"6Replace the unused local variable "exc_type" with "_".(Ô¨Ä¦
+Npython:S1481"5Replace the unused local variable "exc_obj" with "_".(Ô¨Ä¦
+<python:S125"Remove this commented out code.(Ú¡š½þÿÿÿÿ
+<python:S125“"Remove this commented out code.(ƒåöíùÿÿÿÿ
+mpython:S1542—"ORename function "envoiMail" to match the regular expression ^[a-z_][a-z0-9_]*$.(î¨ßóùÿÿÿÿ
+npython:S117¥"VRename this parameter "fichierLog" to match the regular expression ^[_a-z][a-z0-9_]*$.(”ì¹Û
+rpython:S1542¥"YRename function "ecriture_fichierLog" to match the regular expression ^[a-z_][a-z0-9_]*$.(”ì¹Û
+Upython:S5754«"<Specify an exception class to catch or reraise the exception(ˆÊÉ·

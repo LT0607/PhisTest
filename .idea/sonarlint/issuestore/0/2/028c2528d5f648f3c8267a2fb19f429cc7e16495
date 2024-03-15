@@ -1,0 +1,22 @@
+
+Œpython:S2208"GImport only needed names or import the module and then use its members.(É™ùÖ8†‰„òá1J$71b40e32-c904-4559-9522-5737b5e49aff
+hpython:S125"Remove this commented out code.(•Ş•ïüÿÿÿÿ8‡‰„òá1J$df236dfb-ac01-4796-9238-338d1b496490
+€python:PrintStatementUsage8"-Replace print statement by built-in function.(Èàæ¨8‡‰„òá1J$249f9a10-56e5-4010-873e-7e08455c737f
+python:S5754@"<Specify an exception class to catch or reraise the exception(ˆÊÉ·8ˆ‰„òá1J$f69bc5f9-9f00-44c8-a605-cc28e2948e1c
+…python:PrintStatementUsageA"-Replace print statement by built-in function.(í¡õúÿÿÿÿ8ˆ‰„òá1J$ee137e22-8b88-4ba9-a14d-ea8ac23c20cd
+cpython:S125T"Remove this commented out code.(ğÏ—8‰‰„òá1J$c3b9c4cd-167f-47c9-82e0-0395e634c898
+hpython:S125b"Remove this commented out code.(æ¹‹¼ûÿÿÿÿ8‰‰„òá1J$75326d07-3a55-4a2c-96d8-447e3eeb2891
+hpython:S125e"Remove this commented out code.(…òóÿûÿÿÿÿ8‰‰„òá1J$5f534c1e-148e-44f2-bb6a-49034c34d9f4
+€python:PrintStatementUsagen"-Replace print statement by built-in function.(ºşÅí8‰‰„òá1J$39cbcf74-4221-4755-ac1c-b3fef209b022
+dpython:S125Œ"Remove this commented out code.(ÄÍö¨8‰‰„òá1J$5ea59160-2d21-48c2-8f9d-b3a5cbfb7fd3
+‚python:S5754Ï"<Specify an exception class to catch or reraise the exception(ˆÊÉ·8‰‰„òá1J$c5fbc307-7899-4970-b0b1-1b31e831445c
+python:PrintStatementUsageĞ"-Replace print statement by built-in function.(¡û½ş8‰‰„òá1J$cc926349-0803-42b8-9c1f-04fc8ea149ef
+python:PrintStatementUsageÙ"-Replace print statement by built-in function.(ÏÚ¬§8Š‰„òá1J$1c203b0d-a4a0-47dd-b4cd-e27964c6f553
+python:PrintStatementUsageİ"-Replace print statement by built-in function.(Áºç–8Š‰„òá1J$7f784d3b-a98e-4c80-9912-0f4a76472a93
+dpython:S125â"Remove this commented out code.(ïòô8Š‰„òá1J$2b5dcf7e-1667-4a58-b9d4-82daa5935669
+†python:PrintStatementUsageä"-Replace print statement by built-in function.(¿å³•ûÿÿÿÿ8Š‰„òá1J$9b47e6ea-f487-4c9c-af47-7583ae8295bd
+python:PrintStatementUsageè"-Replace print statement by built-in function.(Áºç–8‹‰„òá1J$83ba8011-cfd2-4f77-a145-d60e04a4fc63
+†python:PrintStatementUsageø"-Replace print statement by built-in function.(‡ƒ¹Âÿÿÿÿÿ8‹‰„òá1J$dcdc8a77-c5e1-45fc-88fd-51ce86db270f
+†python:PrintStatementUsageú"-Replace print statement by built-in function.(“åøŸûÿÿÿÿ8‹‰„òá1J$d5e88b6d-7f20-4428-a155-65dc01f6186c
+python:PrintStatementUsageş"-Replace print statement by built-in function.(Áºç–8‹‰„òá1J$eea1a702-81a6-4a6f-96ba-5ae7ac839771
+ipython:S125‹"Remove this commented out code.(‰›¾âşÿÿÿÿ8‹‰„òá1J$cc2fd748-5555-4d57-9bf1-e8361bf1087b

@@ -24,7 +24,7 @@
 		<image>0</image>
 	<pc>0</pc>
 		<bd>1</bd>
-	<lastloc>68385</lastloc>
+	<lastloc>1</lastloc>
 	<mail>myriam.dauzat@inrae.fr</mail>
 	<log>/home/phenopsis/METEO/insertionMeteoLOG1.txt</log>
 		</alerte>
@@ -53,7 +53,7 @@
 		<image>0</image>
 	<pc>0</pc>
 		<bd>0</bd>
-	<lastloc>97330</lastloc>
+	<lastloc>1</lastloc>
 	<mail>myriam.dauzat@inrae.fr</mail>
 	<log>/home/phenopsis/METEO/insertionMeteoLOG2.txt</log>
 		</alerte>
@@ -82,7 +82,7 @@
 		<image>0</image>
 	<pc>1</pc>
 		<bd>1</bd>
-	<lastloc>271945</lastloc>
+	<lastloc>1</lastloc>
 	<mail>myriam.dauzat@inrae.fr</mail>
 	<log>/home/phenopsis/METEO/insertionMeteoLOG3.txt</log>
 		</alerte>

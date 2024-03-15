@@ -17,6 +17,7 @@ import os, csv, time, sys, argparse, traceback
 from time_module import doy_to_time_array
 # from lxml import etree
 import xml.etree.ElementTree as ET
+import utils
 
 ### RECUPERATION PARAMETRES ###
 parser = argparse.ArgumentParser(description='insertion meteo phenopsis')
