@@ -1,14 +1,15 @@
 {
   "target":[{
-    "name": "C1",
+    "name": "PHENOPSIS-1",
     "uri": "dev:id/organization/facility.c1",
     "variable": [{
       "name": "temperature",
       "uri": "http://opensilex.dev/id/variable/air_temperature_sensor_degree_celsius",
       "device": {
         "uri": "dev:id/device/tair_p1",
-        "rdf_type": "SensingDevice",
-        "provenance_uri": "dev:id/provenance/phenopsis1_sensor"
+        "rdf_type": "vocabulary:SensingDevice",
+        "provenance_uri": "dev:id/provenance/phenopsis1_sensor",
+        "provenance_used": " "
       }
     },
       {
@@ -16,40 +17,44 @@
         "uri": "http://opensilex.dev/id/variable/air_humidity_sensor_percent",
         "device": {
           "uri": "dev:id/device/hrair_p1",
-          "rdf_type": "SensingDevice",
-          "provenance_uri": "dev:id/provenance/phenopsis1_sensor"
+          "rdf_type": "vocabulary:SensingDevice",
+          "provenance_uri": "dev:id/provenance/phenopsis1_sensor",
+          "provenance_used": " "
         }
 
       },
       {
         "name": "rayonnement",
-        "uri": "http://opensilex.dev/id/variable/air_irradiance_sensor_micromole_per_square_metre_per_second",
+        "uri": "http://opensilex.dev/id/variable/air_par_sensor_micromole_per_square_metre_per_second",
         "device": {
           "uri": "dev:id/device/par_p1",
-          "rdf_type": "SensingDevice",
-          "provenance_uri": "dev:id/provenance/phenopsis1_sensor"
+          "rdf_type": "vocabulary:SensingDevice",
+          "provenance_uri": "dev:id/provenance/phenopsis1_sensor",
+          "provenance_used": " "
         }
       },
       {
         "name": "vpd",
         "uri": "http://opensilex.dev/id/variable/air_vapor_pressure_deficit_sensor_kilopascal",
         "device": {
-          "uri": "dev:id/device/campbell_1",
-          "rdf_type": "dev:id/provenance/phenopsis1_computation",
-          "provenance_uri": "dev:id/provenance/phenopsis1_computation"
+          "uri": "dev:id/device/vpd_p1",
+          "rdf_type": "vocabulary:Software",
+          "provenance_uri": "dev:id/provenance/phenopsis1_computation",
+          "provenance_used": " "
         }
       }]
   },
     {
-      "name": "C2",
+      "name": "PHENOPSIS-2",
       "uri": "dev:id/organization/facility.c2",
       "variable": [{
         "name": "temperature",
         "uri": "http://opensilex.dev/id/variable/air_temperature_sensor_degree_celsius",
         "device": {
           "uri": "dev:id/device/tair_p2",
-          "rdf_type": "SensingDevice",
-          "provenance_uri": "dev:id/provenance/phenopsis2_sensor"
+          "rdf_type": "vocabulary:SensingDevice",
+          "provenance_uri": "dev:id/provenance/phenopsis2_sensor",
+          "provenance_used": ""
         }
       },
         {
@@ -57,27 +62,30 @@
           "uri": "http://opensilex.dev/id/variable/air_humidity_sensor_percent",
           "device": {
             "uri": "dev:id/device/hrair_p2",
-            "rdf_type": "SensingDevice",
-            "provenance_uri": "dev:id/provenance/phenopsis2_sensor"
+            "rdf_type": "vocabulary:SensingDevice",
+            "provenance_uri": "dev:id/provenance/phenopsis2_sensor",
+            "provenance_used": ""
           }
 
         },
         {
           "name": "rayonnement",
-          "uri": "http://opensilex.dev/id/variable/air_irradiance_sensor_micromole_per_square_metre_per_second",
+          "uri": "http://opensilex.dev/id/variable/air_par_sensor_micromole_per_square_metre_per_second",
           "device": {
             "uri": "dev:id/device/par_p2",
-            "rdf_type": "SensingDevice",
-            "provenance_uri": "dev:id/provenance/phenopsis2_sensor"
+            "rdf_type": "vocabulary:SensingDevice",
+            "provenance_uri": "dev:id/provenance/phenopsis2_sensor",
+            "provenance_used": ""
           }
         },
         {
           "name": "vpd",
           "uri": "http://opensilex.dev/id/variable/air_vapor_pressure_deficit_sensor_kilopascal",
           "device": {
-            "uri": "dev:id/device/campbell_2",
-            "rdf_type": "dev:id/provenance/phenopsis2_computation",
-            "provenance_uri": "dev:id/provenance/phenopsis2_computation"
+            "uri": "dev:id/device/vpd_p2",
+            "rdf_type": "vocabulary:Software",
+            "provenance_uri": "dev:id/provenance/phenopsis2_computation",
+            "provenance_used": " "
           }
         },
         {
@@ -85,22 +93,24 @@
           "uri": "http://opensilex.dev/id/variable/air_carbon_dioxide_sensor_parts_per_million",
           "device": {
             "uri": "dev:id/device/co2_p2",
-            "rdf_type": "SensingDevice",
-            "provenance_uri": "dev:id/provenance/phenopsis2_sensor"
+            "rdf_type": "vocabulary:SensingDevice",
+            "provenance_uri": "dev:id/provenance/phenopsis2_sensor",
+            "provenance_used": ""
           }
         }]
 
     },
     {
-      "name": "C3",
+      "name": "PHENOPSIS-3",
       "uri": "dev:id/organization/facility.c3",
       "variable": [{
         "name": "temperature",
         "uri": "http://opensilex.dev/id/variable/air_temperature_sensor_degree_celsius",
         "device": {
           "uri": "dev:id/device/tair_p3",
-          "rdf_type": "SensingDevice",
-          "provenance_uri": "dev:id/provenance/phenopsis3_sensor"
+          "rdf_type": "vocabulary:SensingDevice",
+          "provenance_uri": "dev:id/provenance/phenopsis3_sensor",
+          "provenance_used": ""
         }
       },
         {
@@ -108,27 +118,30 @@
           "uri": "http://opensilex.dev/id/variable/air_humidity_sensor_percent",
           "device": {
             "uri": "dev:id/device/hrair_p3",
-            "rdf_type": "SensingDevice",
-            "provenance_uri": "dev:id/provenance/phenopsis3_sensor"
+            "rdf_type": "vocabulary:SensingDevice",
+            "provenance_uri": "dev:id/provenance/phenopsis3_sensor",
+            "provenance_used": ""
           }
 
         },
         {
           "name": "rayonnement",
-          "uri": "http://opensilex.dev/id/variable/air_irradiance_sensor_micromole_per_square_metre_per_second",
+          "uri": "http://opensilex.dev/id/variable/air_par_sensor_micromole_per_square_metre_per_second",
           "device": {
             "uri": "dev:id/device/par_p3",
-            "rdf_type": "SensingDevice",
-            "provenance_uri": "dev:id/provenance/phenopsis3_sensor"
+            "rdf_type": "vocabulary:SensingDevice",
+            "provenance_uri": "dev:id/provenance/phenopsis3_sensor",
+            "provenance_used": ""
           }
         },
         {
           "name": "vpd",
           "uri": "http://opensilex.dev/id/variable/air_vapor_pressure_deficit_sensor_kilopascal",
           "device": {
-            "uri": "dev:id/device/campbell_3",
-            "rdf_type": "dev:id/provenance/phenopsis3_computation",
-            "provenance_uri": "dev:id/provenance/phenopsis3_computation"
+            "uri": "dev:id/device/vpd_p3",
+            "rdf_type": "vocabulary:Software",
+            "provenance_uri": "dev:id/provenance/phenopsis3_computation",
+            "provenance_used": " "
           }
         },
         {
@@ -136,13 +149,12 @@
           "uri": "http://opensilex.dev/id/variable/air_carbon_dioxide_sensor_parts_per_million",
           "device": {
             "uri": "dev:id/device/co2_p3",
-            "rdf_type": "SensingDevice",
-            "provenance_uri": "dev:id/provenance/phenopsis3_sensor"
+            "rdf_type": "vocabulary:SensingDevice",
+            "provenance_uri": "dev:id/provenance/phenopsis3_sensor",
+            "provenance_used": ""
           }
         }]
 
     }
-  ],
-  "time_zone": "Europe/Paris",
-  "body-uri": "dev:id/data/meteo"
+  ]
 }

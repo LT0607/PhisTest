@@ -1,6 +1,7 @@
 import opensilexClientToolsPython
 from pprint import pprint
 import datetime
+import pytz
 import dateutil.parser as parser
 from InsertionMeteoPhis import meteo_parser
 
@@ -20,24 +21,19 @@ pythonClient.connect_to_opensilex_ws(
 
 api_instance = opensilexClientToolsPython.DataApi(pythonClient)
 
-# Open the JSON file
-
-file = open('data_config.json')
-data_config = json.load(file)
-
 
 # Recuperation des données du fichier météo
 list_data_meteo = meteo_parser('config.xml')
-#print(list_data_meteo)
+
 
 def day_to_iso_8601(date_text):
     date = parser.parse(date_text)
-    return date.astimezone().isoformat()
+    return date.astimezone(pytz.timezone("Europe/Paris")).isoformat()
 
 
-def insertion_data(date, variable_uri, value, provenance, body_uri, timezone, target):
+def insert_data(date, variable_uri, value, provenance, target):
     body = [
-        opensilexClientToolsPython.DataCreationDTO(date, variable_uri, value, provenance, body_uri, timezone, target)]
+        opensilexClientToolsPython.DataCreationDTO(date, variable_uri, value, provenance, target=target)]
     try:
         # Add data
         api_response = api_instance.add_list_data(body=body, )
@@ -45,27 +41,36 @@ def insertion_data(date, variable_uri, value, provenance, body_uri, timezone, ta
     except opensilexClientToolsPython.rest.ApiException as e:
         print("Exception when calling DataApi->add_list_data: %s\n" % e)
 
-#--- récupération des données à insérer selon le fichier de config
+
+# Open the JSON file
+
+file = open('data_config.json')
+data_config = json.load(file)
+
+# --- récupération des données à insérer selon le fichier de config
+
 for el in list_data_meteo:
     date = day_to_iso_8601(el['date'])
     for k, v in el.items():
+        # print(f'{k} {v}')
+        # parcourir les targets
         for i in range(3):
             if el['site'] == data_config['target'][i]['name']:
                 target_uri = data_config['target'][i]['uri']
                 for j in range(len(data_config['target'][i]['variable'])):
                     if data_config['target'][i]['variable'][j]['name'] == k:
+                        var_val = v
+                        # récupérations de données depuis json
                         var_uri = data_config['target'][i]['variable'][j]['uri']
                         device_uri = data_config['target'][i]['variable'][j]['device']['uri']
+                        rdf_type = data_config['target'][i]['variable'][j]['device']['rdf_type']
+                        provenance = data_config['target'][i]['variable'][j]['device']['provenance_uri']
+                        provenance_used = data_config['target'][i]['variable'][j]['device']['provenance_used']
+                        #prov_used = ProvEntityModel(provenance_used, rdf_type)
+                        prov_associated_with = ProvEntityModel(device_uri, rdf_type)
+                        prov = DataProvenanceModel(provenance, prov_was_associated_with=[prov_associated_with])
+                        insert_data(date, var_uri, var_val, prov, target_uri)
 
-
-#date = day_to_iso_8601(el['date'])
-
-    #print(list(el.keys())[list(el.values()).index(el['temperature'])])
-
-
-
-    #for var in list_data_meteo['variable']:
-     #   var['name']
 
 
 """def insertion_air_temperature():
@@ -75,7 +80,7 @@ for el in list_data_meteo:
     for element in list_data:
         insertion_data(day_to_iso_8601(element['date']), variable, element['temperature'], prov, body_u, time_z, element['site'])"""
 
-# -------- Main ----------------------------------------------------------
+
 
 
 

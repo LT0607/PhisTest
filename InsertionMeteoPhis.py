@@ -141,13 +141,13 @@ def meteo_parser (config_file):
                     dateBD = str(date[0]) + "-" + str(date[1]) + "-" + str(date[2]) + " " + str(heure)
 
                     # stockage des donn  es sous forme de dictionnaire
-                    if site == "C1":
+                    if site == "PHENOPSIS-1":
                         temperature = float(ligne[4])
                         humidite = float(ligne[5])
                         rayonnement = float(ligne[6])
                         vpd = float(ligne[7])
                         # tp_plafond  = float(ligne[8])
-                    elif site == "C2" or site == "C3":
+                    elif site == "PHENOPSIS-2" or site == "PHENOPSIS-3":
                         temperature = float(ligne[4])
                         humidite = float(ligne[5])
                         rayonnement = float(ligne[6])
@@ -164,7 +164,7 @@ def meteo_parser (config_file):
                         data['rayonnement'] = rayonnement
                     if temperature != -6999 and rayonnement != -6999:
                         data['vpd'] = vpd
-                    if site == "C2" or site == "C3":
+                    if site == "PHENOPSIS-2" or site == "PHENOPSIS-3":
                         data['co2'] = co2
                     data['date'] = dateBD
                     data['site'] = site

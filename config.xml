@@ -1,6 +1,6 @@
 <alertes>
 		<alerte>
-		<site>C1</site>
+		<site>PHENOPSIS-1</site>
 		<ordi>lps-phenopsis1</ordi>
 		<actif>0</actif>
 		<actifco2>0</actifco2>
@@ -29,7 +29,7 @@
 	<log>/home/phenopsis/METEO/insertionMeteoLOG1.txt</log>
 		</alerte>
 		<alerte>
-		<site>C2</site>
+		<site>PHENOPSIS-2</site>
 		<ordi>lps-phenopsis2</ordi>
 		<actif>0</actif>
 		<actifco2>0</actifco2>
@@ -58,7 +58,7 @@
 	<log>/home/phenopsis/METEO/insertionMeteoLOG2.txt</log>
 		</alerte>
 		<alerte>
-		<site>C3</site>
+		<site>PHENOPSIS-3</site>
 		<ordi>lps-phenopsis3</ordi>
 		<actif>1</actif>
 		<actifco2>0</actifco2>
