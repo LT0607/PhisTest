@@ -1,0 +1,40 @@
+
+Œpython:S2208"GImport only needed names or import the module and then use its members.(É™ùÖ8Ì ¿èâ1J$be666ea3-ca74-4715-8bab-d670221d6f9f
+hpython:S125"Remove this commented out code.(•Ş•ïüÿÿÿÿ8Í ¿èâ1J$9fe996f4-ec90-46ff-8c7d-d7c9e253c223
+hpython:S125"Remove this commented out code.(ÏÑóöøÿÿÿÿ8Í ¿èâ1J$70ae0a9a-73a8-4b28-aa57-e7710dacf998
+hpython:S125"Remove this commented out code.(êâ•éıÿÿÿÿ8Í ¿èâ1J$bb345201-e941-42c9-9aa6-e6d40b96ee14
+›python:S1175"WRename this local variable "dataIn" to match the regular expression ^[_a-z][a-z0-9_]*$.(ï¡™’8Î ¿èâ1J$0c8e143f-3768-4a7d-89af-a27e5e775b65
+¥python:S117P"\Rename this local variable "dataToWrite" to match the regular expression ^[_a-z][a-z0-9_]*$.(»§Ôáşÿÿÿÿ8Î ¿èâ1J$4043864b-a815-49ee-a1db-2d7cc08231af
+œpython:S117Š"WRename this local variable "dateBD" to match the regular expression ^[_a-z][a-z0-9_]*$.(î¢œ8Î ¿èâ1J$1aa12b9c-f1aa-42e7-997a-3b972bb594c5
+£python:S117p"ZRename this local variable "dateHeure" to match the regular expression ^[_a-z][a-z0-9_]*$.(ºÈéîüÿÿÿÿ8Î ¿èâ1J$b457cb2b-7494-43f4-a6ad-adfb91917bcc
+©python:S117;"`Rename this local variable "donneesAInserer" to match the regular expression ^[_a-z][a-z0-9_]*$.(¯›Â†ÿÿÿÿÿ8Î ¿èâ1J$5ea91a9c-16f1-4f3a-b08a-bf1e5d251f8e
+¡python:S1173"XRename this local variable "envoiBD" to match the regular expression ^[_a-z][a-z0-9_]*$.(â°µ¤úÿÿÿÿ8Î ¿èâ1J$565e4ff6-dd40-40df-8dee-f6de6c89f359
+¤python:S1171"[Rename this local variable "fichierLog" to match the regular expression ^[_a-z][a-z0-9_]*$.(ØÉº¤şÿÿÿÿ8Î ¿èâ1J$44724b8c-f430-4e5d-bc23-d679f0c361e9
+¤python:S117{"[Rename this local variable "jourJulien" to match the regular expression ^[_a-z][a-z0-9_]*$.(è‚Äÿÿÿÿÿ8Î ¿èâ1J$e2f86bd8-aba5-46fa-b3e2-82e91aa40d70
+§python:S117g"^Rename this local variable "ligneAInserer" to match the regular expression ^[_a-z][a-z0-9_]*$.(ùàõİûÿÿÿÿ8Î ¿èâ1J$8afb079f-3af5-431b-9c3e-268bbb070c03
+¦python:S117h"]Rename this local variable "ligneASauter" to match the regular expression ^[_a-z][a-z0-9_]*$.(´¬­µúÿÿÿÿ8Ï ¿èâ1J$6dea5b37-d0b6-4881-92cd-75db1080523d
+Ÿpython:S117a"[Rename this local variable "lignesVues" to match the regular expression ^[_a-z][a-z0-9_]*$.(ˆÛ³É8Ï ¿èâ1J$b51b4a35-d688-4583-8a76-646913a160bc
+python:S117T"ZRename this local variable "mysqlFile" to match the regular expression ^[_a-z][a-z0-9_]*$.(é®èÚ8Ï ¿èâ1J$51056bfa-68c2-45c4-99b2-dfc18f1c2736
+python:S117b"[Rename this local variable "nbDoublons" to match the regular expression ^[_a-z][a-z0-9_]*$.(ãĞŠ&8Ï ¿èâ1J$80a7dfd1-86c0-4fc6-aaab-280c8523b316
+™python:S117I"VRename this local variable "nbRow" to match the regular expression ^[_a-z][a-z0-9_]*$.(ëı…08Ï ¿èâ1J$3ba1991e-2a88-474d-95a4-481c694d0b30
+python:S117^"YRename this local variable "numLigne" to match the regular expression ^[_a-z][a-z0-9_]*$.(·Ø†¿8Ï ¿èâ1J$3c88778a-f730-4aa2-b34b-d7bb0f6986c5
+ppython:S1481R"&Remove the unused local variable "db".(œÉ½êıÿÿÿÿ8Ñ ¿èâ1J$cddda409-818c-4e56-a7cd-35f2d4d0cd14
+spython:S1481J".Replace the unused loop index "line" with "_".(Â‚Â‡8Ñ ¿èâ1J$dfb4081e-8d9e-483c-95df-f2f084b82fad
+xpython:S14811".Remove the unused local variable "fichierLog".(ØÉº¤şÿÿÿÿ8Ğ ¿èâ1J$c4736fe9-605a-4ab1-8646-2e0065071cfc
+}python:S1481;"3Remove the unused local variable "donneesAInserer".(¯›Â†ÿÿÿÿÿ8Ğ ¿èâ1J$46bd4a2b-81db-4f21-bdb9-703e6b234550
+ppython:S1481Q"&Remove the unused local variable "fd".(ïÚ™•ÿÿÿÿÿ8Ñ ¿èâ1J$b58655af-a443-48ef-9d10-4b284656d513
+ppython:S1481Š"*Remove the unused local variable "dateBD".(î¢œ8Ñ ¿èâ1J$fbdb6b61-2bc9-4c14-8d41-89abcf555214
+zpython:S1481h"0Remove the unused local variable "ligneASauter".(´¬­µúÿÿÿÿ8Ğ ¿èâ1J$0957e60f-485d-4ed0-b5c8-fee0398ec541
+opython:S14818"+Remove the unused local variable "message".(ˆØ†8Ğ ¿èâ1J$68e2535d-9c2f-41c2-a1d6-df3581b086de
+{python:S1481g"1Remove the unused local variable "ligneAInserer".(ùàõİûÿÿÿÿ8Ñ ¿èâ1J$cda67c76-c5a4-47c0-8b13-f0bee70d06b2
+npython:S14816")Remove the unused local variable "email".(èÖŠ8Ğ ¿èâ1J$f04e18db-908b-43d1-a122-a3ed53f01e78
+rpython:S1481b".Remove the unused local variable "nbDoublons".(ãĞŠ&8Ñ ¿èâ1J$ab7f0710-2cc6-41d8-8921-0c5f7b0a2718
+ypython:S1481P"/Remove the unused local variable "dataToWrite".(»§Ôáşÿÿÿÿ8Ñ ¿èâ1J$2fb0988e-db16-4b4b-9990-ea201a06e2e8
+rpython:S1481T"-Remove the unused local variable "mysqlFile".(é®èÚ8Ñ ¿èâ1J$59a37dd0-7143-4d50-96dd-c401abc2f5e0
+python:S3776*"TRefactor this function to reduce its Cognitive Complexity from 70 to the 15 allowed.(¥ê–ÿıÿÿÿÿ8Ò ¿èâ1J$fcb21ba6-0e87-49d5-8326-e12d231ae9cd
+hpython:S125%"Remove this commented out code.(ÀòÇÓÿÿÿÿÿ8Ó ¿èâ1J$3055d68d-2b78-4ac4-bc7b-82d419dc00d8
+python:S5754F"<Specify an exception class to catch or reraise the exception(ˆÊÉ·8Ó ¿èâ1J$8ef0235a-6475-426e-9ee2-0bbb4f7b3f4b
+cpython:S125["Remove this commented out code.(ğÏ—8Ó ¿èâ1J$e09d15c0-cd42-4247-b250-ef32f884a388
+hpython:S125i"Remove this commented out code.(æ¹‹¼ûÿÿÿÿ8Ó ¿èâ1J$f9d43b6a-63c1-40a6-92b3-ce07da4cd36d
+hpython:S125l"Remove this commented out code.(…òóÿûÿÿÿÿ8Ó ¿èâ1J$490ca9f7-e6c5-4225-9afb-af7e3a6e735d
+dpython:S125’"Remove this commented out code.(ÄÍö¨8Ô ¿èâ1J$eb060865-3c42-4b1e-8eb2-d2a146c0325f
